@@ -1,0 +1,24 @@
+.logo {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  @include trns;
+
+  &:active {
+    scale: var(--scale);
+  }
+
+  &__image {
+    width: ptrm(190);
+    height: ptrm(35);
+    object-fit: cover;
+    @include trns;
+  }
+
+  @include hover {
+    .logo__image {
+      filter: brightness(0.8);
+    }
+  }
+}

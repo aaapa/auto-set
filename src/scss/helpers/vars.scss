@@ -1,0 +1,23 @@
+@use "functions" as *;
+@use "media" as *;
+
+:root {
+  --opacity: 0.5;
+  --scale: 0.9;
+
+  --color-orange: #E3762B;
+  --color-dark: #54616C;
+  --color-secondary: var(--color-dark);
+  --color-main: var(--color-orange);
+  --color-light: white;
+  --color-section-background: whitesmoke;
+
+  --section-scroll-top: #{ptrm(200)};
+
+  @include tablet {
+    --section-scroll-top: #{ptrm(120)};
+  }
+
+  --container-width: #{ptrm(1350)};
+  --container-padding: #{ptrm(15)};
+}

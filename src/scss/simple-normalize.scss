@@ -1,0 +1,96 @@
+[class] {
+  margin: ptrm(0);
+  padding: ptrm(0);
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  color: inherit;
+  font-size: 100%;
+  text-wrap: balance;
+  font-family: inherit;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-main) transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+:focus-visible {
+  outline: ptrm(3) solid rgb(27 127 204 / 80%);
+  caret-color: var(--color-main);
+}
+
+::spelling-error {
+  text-decoration: none;
+  background-color: rgb(255 0 0 / 25%);
+}
+
+::selection {
+  color: var(--color-light);
+  text-decoration: underline;
+  background-color: var(--color-main);
+}
+
+html,
+body {
+  width: 100%;
+  margin: ptrm(0);
+  scroll-behavior: smooth;
+}
+
+[inert],
+[inert] *,
+[disabled]:where(
+  button,
+  fieldset,
+  optgroup,
+  option,
+  select,
+  textarea,
+  input) {
+  opacity: 0.7;
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+@media (hover:hover) {
+  input:hover {
+    cursor: pointer;
+  }
+}
+
+input:focus-visible {
+  cursor: text;
+}
+
+@media (hover:hover) {
+  textarea:hover {
+    cursor: pointer;
+  }
+}
+
+textarea:focus-visible {
+  cursor: text;
+}
+
+[hidden] {
+  display: none !important;
+}

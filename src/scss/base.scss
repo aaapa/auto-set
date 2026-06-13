@@ -1,0 +1,36 @@
+html,
+body {
+  color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-family: "LiberationSans-Regular";
+  overflow: hidden auto;
+  background-color: var(--color-light);
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: ptrm(4);
+    background-color: var(--color-main);
+  }
+}
+
+.container {
+  width: 100%; 
+  max-width: var(--container-width);
+  padding-inline: var(--container-padding);
+  margin-inline: auto;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.tippy {
+  &-arrow {
+    transition: none !important;
+  }
+}

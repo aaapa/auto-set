@@ -1,0 +1,52 @@
+<section class="feedback" id="feedback" aria-labelledby="feedback-title" data-js-feedback>
+ <div class="feedback__inner container">
+  <img class="feedback__background" src="imgs/feedback/feedback-background.webp" loading="lazy" decoding="async" alt="">
+   <h2 class="feedback__title title title--medium" id="feedback-title">Понравилась модель? <br> Оставьте заявку прямо сейчас!</h2>
+   <p class="feedback__desc">Получите индивидуальное предложение на новый LADA и консультацию от официального дилера!</p>
+   <form class="feedback__form" novalidate onsubmit="return false">
+   <div class="feedback__select select" data-js-select>
+    <input type="hidden" name="feedback-model-input" value="granta" data-js-select-input>
+    <button class="feedback__select-selected select__selected" id="feedback-model-button" type="button" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="feedback-model-list" data-js-select-selected>
+     <span class="feedback__select-selected-text select__selected-text">LADA Granta</span>
+    </button>
+    <div class="select__content" data-js-select-content>
+     <ul class="select__options" id="feedback-model-list" role="listbox">
+      <li class="feedback__select-option select__option" role="option" aria-selected="true" data-select-option-value="feedback-granta" data-js-select-option>
+       <span class="select__text">LADA Granta</span>
+      </li>
+      <li class="feedback__select-option select__option" role="option" aria-selected="false" data-select-option-value="feedback-niva-travel" data-js-select-option>
+       <span class="select__text">LADA Niva Travel</span>
+      </li>
+      <li class="feedback__select-option select__option" role="option" aria-selected="false" data-select-option-value="feedback-niva-legend" data-js-select-option>
+       <span class="select__text">LADA Niva Legend</span>
+      </li>
+      <li class="feedback__select-option select__option" role="option" aria-selected="false" data-select-option-value="feedback-iskra" data-js-select-option>
+       <span class="select__text">LADA Iskra</span>
+      </li>
+      <li class="feedback__select-option select__option" role="option" aria-selected="false" data-select-option-value="feedback-vesta" data-js-select-option>
+       <span class="select__text">LADA Vesta</span>
+      </li>
+      <li class="feedback__select-option select__option" role="option" aria-selected="false" data-select-option-value="feedback-largus" data-js-select-option>
+       <span class="select__text">LADA Largus</span>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="feedback__input input">
+    <input class="feedback__input-field input__field" id="feedback-name-input" type="text" name="feedback_name" placeholder=" " autocomplete="given-name" aria-required="true" aria-describedby="feedback-name-input-desc" required data-js-feedback-name-input>
+     <label class="feedback__input-label input__label" for="feedback-name-input">Имя</label>
+     <span class="input__desc" id="feedback-name-input-desc">Обязательное поле</span>
+   </div>
+   <div class="feedback__input input">
+    <input class="feedback__input-field input__field" id="feedback-phone-input" type="tel" inputmode="tel" name="feedback_phone" placeholder=" " autocomplete="tel" aria-required="true" aria-describedby="feedback-phone-input-desc" required data-js-feedback-phone-input>
+     <label class="feedback__input-label input__label" for="feedback-phone-input">Телефон</label>
+     <span class="feedback__input-desc input__desc" id="feedback-phone-input-desc">Формат: +7 (999) 999-99-99</span>
+   </div>
+    <button class="feedback__button button button--main" type="submit">Отправить заявку</button>
+    <label class="feedback__agreement">
+     <input class="checkbox" type="checkbox" name="feedback_agree_terms" aria-required="true" required>
+     <span class="feedback__agreement-text">Я даю согласие на <a class="feedback__agreement-link" href="#!">Обработку персональных данных</a></span>
+    </label>
+  </form>
+ </div>
+</section>

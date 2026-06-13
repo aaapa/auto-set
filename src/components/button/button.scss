@@ -1,0 +1,53 @@
+.button {
+  min-height: ptrm(45);
+  padding-inline: ptrm(50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  user-select: none;
+  letter-spacing: ptrm(0.72);
+  @include trns;
+
+  &:active {
+    scale: var(--scale);
+  }
+
+  &--transparent-white {
+    border: ptrm(1) solid var(--color-light);
+
+    @include hover {
+      color: var(--color-secondary);
+      background-color: var(--color-light);
+    }
+  }
+
+  &--transparent-main {
+    color: var(--color-main);
+    border: ptrm(1) solid var(--color-main);
+
+    @include hover {
+      color: var(--color-light);
+      background-color: var(--color-main);
+    }
+  }
+
+  &--main {
+    color: var(--color-light);
+    background-color: var(--color-main);
+
+    @include hover {
+      background-color: #ca6722;
+    }
+  }
+
+  &--secondary {
+    color: var(--color-light);
+    border: ptrm(1) solid var(--color-secondary);
+    background-color: var(--color-secondary);
+
+    @include hover {
+      background-color: #3A4248;
+    }
+  }
+}

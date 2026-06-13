@@ -1,0 +1,39 @@
+.partner-logo {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  @include trns;
+
+  &:active {
+    scale: var(--scale);
+  }
+
+  &__image {
+    width: ptrm(140);
+    height: ptrm(35);
+    padding-inline-end: ptrm(10);
+    flex-shrink: 0;
+    border-right: ptrm(1) solid #4D4D4D;
+    @include trns;
+  }
+
+  @include hover {
+    .partner-logo__image {
+      filter: brightness(0.8);
+    }   
+  }
+
+  &__anniversary-badge {
+    width: ptrm(60);
+    height: ptrm(30);
+    padding-inline-start: ptrm(10);
+    @include trns;
+  }
+
+  &--white {
+    .partner-logo__image {
+      border-right-color: var(--color-light);
+    }
+  }
+}

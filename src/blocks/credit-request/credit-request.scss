@@ -1,0 +1,125 @@
+.credit-request {
+  width: 100%;
+  padding-block: ptrm(100);
+  scroll-margin-block-start: var(--section-scroll-top);
+  content-visibility: auto;
+  contain-intrinsic-size: auto ptrm(885);
+
+  @include tablet {
+    padding-block: ptrm(30);
+  }
+
+  &__inner {
+    display: flex;
+    gap: ptrm(60);
+    align-items: center;
+
+    @include tablet {
+      gap: ptrm(30);
+      flex-direction: column;
+    }
+  }
+
+  &__decor {
+    @include square(ptrm(685));
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__main {
+    width: 100%;
+    display: flex;
+    gap: ptrm(30);
+    flex-direction: column;
+
+    @include tablet {
+      gap: ptrm(20);
+      align-items: center;
+    }
+  }
+
+  &__desc {
+    max-width: ptrm(350);
+    font-size: ptrm(18);
+    line-height: 145%;
+
+    @include tablet {
+      max-width: none;
+      text-align: center;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    display: grid;
+    column-gap: ptrm(20);
+    grid-template-columns: repeat(2, 1fr);
+
+    .select__selected-text {
+      width: auto;
+      overflow: visible;
+      white-space: normal;
+    }
+
+    > *:first-child,
+    > *:nth-child(4),
+    > *:nth-child(n+7) {
+      grid-column: 1 / -1;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__select {
+    margin-block-end: ptrm(18);
+
+    &-selected {
+    border-bottom: ptrm(1) solid rgba(0, 0, 0, 0.20);
+    background-color: whitesmoke;
+
+      &::after {
+        border-color: var(--color-main);
+      }
+    }
+  }
+
+  &__agreement {
+    display: flex;
+    gap: ptrm(10);
+    align-items: center;
+    cursor: pointer;
+    margin-block-end: ptrm(18);
+
+    &-text {
+      line-height: 130%;
+    }
+
+    &-link {
+      color: var(--color-main);
+      display: inline-block;
+      @include trns;
+
+      @include hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        scale: var(--scale);
+      }
+    }
+  }
+
+  &__button {
+    min-height: ptrm(60);
+    font-weight: bold;
+    text-transform: uppercase;
+
+    @include tablet {
+      min-height: ptrm(45);
+    }
+  }
+}

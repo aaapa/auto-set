@@ -1,0 +1,156 @@
+.feedback {
+  color: var(--color-light);
+  width: 100%;
+  min-height: ptrm(635);
+  padding-block: ptrm(90);
+  position: relative;
+  isolation: isolate;
+  scroll-margin-block-start: var(--section-scroll-top);
+  content-visibility: auto;
+  contain-intrinsic-size: auto ptrm(635);
+
+  @include tablet {
+    padding-block: ptrm(30);
+  }
+
+  &::before {
+    content: "";
+    @include square(100%);
+    display: inline-block;
+    position: absolute;
+    top: ptrm(0);
+    left: ptrm(0);
+    z-index: -1;
+    background-color: rgba(38, 38, 38, 0.75);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+
+    @include tablet {
+      align-items: center;
+    }
+  }
+
+  &__background {
+    @include square(100%);
+    position: absolute;
+    top: ptrm(0);
+    left: ptrm(0);
+    z-index: -2;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-weight: bold;
+    line-height: 120%;
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    max-width: ptrm(675);
+    margin-block: ptrm(30) ptrm(60);
+    font-size: ptrm(18);
+    line-height: 145%;
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    max-width: ptrm(540);
+    display: grid;
+    column-gap: ptrm(20);
+    grid-template-columns: repeat(2, 1fr);
+
+    > *:first-child,
+    > *:nth-child(n + 4) {
+      grid-column: 1 / -1;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__select {
+    margin-block-end: ptrm(18);
+
+    &-selected-text {
+      width: auto;
+      overflow: visible;
+      white-space: normal;
+    }
+
+    &-selected {
+      color: var(--color-secondary);
+      border-bottom: ptrm(1) solid rgba(0, 0, 0, 0.20);
+      background-color: whitesmoke;
+
+      &::after {
+        border-color: var(--color-main);
+      }
+    }
+
+    &-option {
+      color: var(--color-secondary);
+    }
+  }
+
+  &__input {
+    &-field {
+      color: var(--color-secondary);
+    }
+
+    &-label {
+      color: var(--color-secondary);
+    }
+
+    &-desc {
+      color: var(--color-secondary);
+    }
+  }
+
+  &__button {
+    min-height: ptrm(60);
+    font-weight: bold;
+    text-transform: uppercase;
+
+    @include tablet {
+      min-height: ptrm(45);
+    }
+  }
+
+  &__agreement {
+    display: flex;
+    gap: ptrm(10);
+    align-items: center;
+    cursor: pointer;
+    margin-block-start: ptrm(24);
+
+    &-text {
+      line-height: 130%;
+    }
+
+    &-link {
+      color: var(--color-main);
+      display: inline-block;
+      @include trns;
+
+      @include hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        scale: var(--scale);
+      }
+    }
+  }
+}

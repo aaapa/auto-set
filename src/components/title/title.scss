@@ -1,0 +1,14 @@
+.title {
+  font-weight: 400;
+  line-height: 106%;
+  letter-spacing: ptrm(0.72);
+  text-transform: uppercase;
+
+  &--big {
+    @include fluid-text(60, 30);
+  }
+
+  &--medium {
+    @include fluid-text(40, 24);
+  }
+}

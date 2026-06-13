@@ -1,0 +1,346 @@
+.model-line {
+  width: 100%;
+  padding-block: ptrm(100) ptrm(150);
+  scroll-margin-block-start: var(--section-scroll-top);
+  content-visibility: auto;
+  contain-intrinsic-size: auto ptrm(1230);
+  background: linear-gradient(to bottom, var(--color-light) ptrm(420), whitesmoke ptrm(260));
+
+  @include mobile {
+    padding-block: ptrm(50);
+  }
+
+  &__inner {
+    width: 100%;
+  }
+
+  &__slider {
+    width: 100%;
+    display: flex;
+    gap: ptrm(65);
+    flex-direction: column;
+
+    @include mobile {
+      gap: ptrm(30);
+    }
+
+    &-header {
+      width: 100%;
+      display: flex;
+      gap: ptrm(10);
+      align-items: center;
+      justify-content: space-between;
+
+      @include mobile {
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+      }
+    }
+
+    &-controls {
+      display: flex;
+      gap: ptrm(15);
+      align-items: center;
+
+      &-item {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-button {
+      min-width: ptrm(55);
+      min-height: ptrm(55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: ptrm(1) solid #D9DCDC;
+      color: #54616C;
+      @include trns;
+
+      @include hover {
+        border-color: var(--color-main);
+        color: var(--color-main);
+      }
+
+      &:active {
+        scale: var(--scale);
+      }
+      
+      &-icon {
+        color: #54616C;
+      }
+    }
+
+    &-slides-wrapper {
+      width: calc(100% + var(--container-padding));
+      margin-block-start: calc(var(--container-padding) * -1);
+      overflow: visible;
+      touch-action: none;
+      user-select: none;
+      cursor: grab;
+
+      &--is-dragging {
+        cursor: grabbing;
+      }
+    }
+
+    &-slides {
+      width: 100%;
+      display: flex;
+      gap: ptrm(35);
+      transition: all .4s ease-in-out;
+    }
+
+    &-slide {
+      display: flex;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    max-width: ptrm(425);
+    padding-block: ptrm(30) ptrm(35);
+    padding-inline: ptrm(30);
+    display: flex;
+    flex: 1;
+    gap: ptrm(10);
+    flex-direction: column;
+    justify-content: space-between;
+    border: ptrm(2) solid #D9DCDC;
+
+    @include mobile {
+      padding-inline: ptrm(14);
+    }
+
+    &-figure {
+      display: flex;
+      gap: ptrm(10);
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &-caption {
+      font-size: ptrm(24);
+      font-weight: bold;
+      letter-spacing: ptrm(0.72);
+      text-transform: uppercase;
+    }
+
+    &-image {
+      width: ptrm(365);
+      height: ptrm(215);
+      object-fit: cover;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-price {
+      width: 100%;
+      display: flex;
+
+      &-label {
+        font-size: ptrm(14);
+      }
+
+      &-list {
+        width: 100%;
+        display: flex;
+        gap: ptrm(40);
+      }
+
+      &-item {
+        display: flex;
+        gap: ptrm(5);
+        flex-direction: column;
+      }
+
+      &-number {
+        color: var(--color-main);
+        font-size: ptrm(24);
+        font-weight: 400;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        & * {
+          white-space: nowrap;
+        }
+      }
+
+      &-credit {
+        font-size: ptrm(24);
+        font-weight: 400;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        & * {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    &-desc {
+      margin-block: ptrm(20) ptrm(30);
+      line-height: 130%;
+    }
+
+    &-options {
+      width: 100%;
+      display: flex;
+      gap: ptrm(40);
+      justify-content: space-between;
+    }
+
+    &-option {
+      display: flex;
+      gap: ptrm(16);
+      flex-direction: column;
+
+      &-title {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    &-colors {
+      display: grid;
+      gap: ptrm(10);
+      grid-template-columns: repeat(5, 1fr);    
+    }
+
+    &-color {
+      display: flex;
+      align-items: center;
+
+      &-input {
+        @include square(ptrm(25));
+        appearance: none;
+        display: inline-block;
+        flex-shrink: 0;
+        border: ptrm(1) solid #D9DCDC;
+        @include trns;
+
+        &--blue {
+          background-color: #154889;
+        }
+
+        &--silver {
+          background-color: #C3C4C4;
+        }
+
+        &--brown {
+          background-color: #706C62;
+        }
+
+        &--white {
+          background-color: var(--color-light);
+        }
+
+        &--dark-green {
+          background-color: #122216;
+        }
+
+        &--black {
+          background-color: #000000;
+        }
+
+        &--dark-gray {
+          background-color: #444E4E;
+        }
+
+        &--red {
+          background-color: #8D1D2C;
+        }
+
+        &:checked {
+          cursor: default;
+          border-width: ptrm(2);
+          border-color: var(--color-main);
+        }
+
+        @include hover {
+          &:not(:checked) {
+            border-color: var(--color-main);
+          }
+        }
+
+        &:active {
+          &:not(:checked) {
+            scale: var(--scale);
+          }          
+        }
+      }
+    }
+
+    &-features {
+      margin-block: ptrm(30) ptrm(40);
+      display: flex;
+      gap: ptrm(15);
+      align-items: start;
+      flex-direction: column;
+
+      &-title {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &-list {
+        display: flex;
+        gap: ptrm(10);
+        flex-direction: column;
+      }
+
+      &-item {
+        list-style: disc;
+
+        &::marker {
+          color: var(--color-main);
+        }
+
+        &--hidden {
+          display: none;
+        }
+      }
+    }
+
+    &-more-button {
+      letter-spacing: ptrm(-0.7);
+      text-decoration: underline;
+      @include trns;
+
+      @include hover {
+        color: var(--color-main);
+      }
+      
+      &:active {
+        scale: var(--scale);
+      }
+    }
+
+    &-actions {
+      width: 100%;
+      display: flex;
+      gap: ptrm(20);
+      flex-direction: column;
+
+      &-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-button {
+      width: 100%;
+      font-weight: bold;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+}

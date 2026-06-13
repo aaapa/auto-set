@@ -1,0 +1,33 @@
+.checkbox {
+  @include square(ptrm(20));
+  appearance: none;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: ptrm(1) solid #D9DCDC;
+  @include trns;
+  background-color: var(--color-light);
+
+  @include hover {
+    border-color: var(--color-main);
+  }
+
+  &:checked {
+    border-color: var(--color-main);
+    background-color: var(--color-main);
+
+    &::after {
+      content: "";
+      @include square(ptrm(8));
+      clip-path: polygon(14% 44%, 0% 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      background-color: var(--color-light);
+    }
+  }
+
+  &:focus-visible {
+    outline: ptrm(3) solid rgb(27 127 204 / 80%);
+    outline-offset: ptrm(2);
+  }
+}

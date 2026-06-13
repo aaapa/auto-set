@@ -1,0 +1,98 @@
+.credit-guides {
+  width: 100%;
+  padding-block-start: ptrm(100);
+  scroll-margin-block-start: var(--section-scroll-top);
+
+  @include mobile {
+    padding-block-start: ptrm(30);
+  }
+
+  &__inner {
+    display: flex;
+    gap: ptrm(60);
+    flex-direction: column;
+
+    @include mobile {
+      gap: ptrm(30);
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    counter-reset: credit-guide;
+    border: ptrm(2) solid #D9DCDC;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item {
+      width: 100%;
+      counter-increment: credit-guide;
+      position: relative;
+      isolation: isolate;
+
+      &::before {
+        content: counter(credit-guide);
+        color: transparent;
+        position: absolute;
+        right: ptrm(0);
+        top: 50%;
+        z-index: -1;
+        translate: 0% -50%;
+        font-size: ptrm(220);
+        -webkit-text-stroke-width: ptrm(0.5);
+        -webkit-text-stroke-color: #D9DCDC;
+      }
+    }
+  }
+
+  &__card {
+    width: 100%;
+    min-height: ptrm(250);
+    padding-block: ptrm(40) ptrm(45);
+    padding-inline: ptrm(30);
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    border-right: ptrm(2) solid #D9DCDC;
+
+    @include mobile {
+      min-height: ptrm(200);
+      padding: ptrm(20);
+      border-right: none;
+      border-bottom: ptrm(2) solid #D9DCDC;
+    }
+
+    &-title {
+      font-size: ptrm(24);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &-desc {
+      margin-block: ptrm(15) ptrm(25);
+      font-size: ptrm(20);
+    }
+
+    &-button {
+      padding-inline: ptrm(20);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: ptrm(0.72);
+    }
+  }
+
+  &__list {
+    &-item {
+      &:last-child {
+        .credit-guides__card {
+          border: none;
+        }
+      }
+    }
+  }
+}

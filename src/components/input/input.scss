@@ -1,0 +1,61 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__field {
+    color: inherit;
+    width: 100%;
+    min-height: ptrm(45);
+    padding-block: ptrm(14) ptrm(6);
+    padding-inline: ptrm(20);
+    border-bottom: ptrm(1) solid rgba(0, 0, 0, 0.20);
+    background-color: whitesmoke;
+    @include trns;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    @include hover {
+      border-color: var(--color-main);
+    }
+
+    &:focus-visible {
+      border-color: var(--color-main);
+      outline: none;
+    }
+  }
+
+  &__label {
+    color: #B9BEBE;
+    width: 100%;
+    height: ptrm(45);
+    padding-inline: ptrm(20);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: ptrm(0);
+    left: ptrm(0);
+    pointer-events: none;
+    @include trns(0.15s);
+  }
+
+  &__field:focus-visible + &__label,
+  &__field:not(:placeholder-shown) + &__label,
+  &__field:-webkit-autofill + &__label {
+    color: var(--color-main);
+    translate: 0% ptrm(-16);
+  }
+
+  &__desc {
+    color: #E74C3C;
+    margin-block-start: ptrm(4);
+    @include hide;
+    @include trns;
+  }
+
+  &__field:user-invalid ~ &__desc {
+    @include show;
+  }
+}

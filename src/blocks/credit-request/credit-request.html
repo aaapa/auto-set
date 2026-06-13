@@ -1,0 +1,73 @@
+<section class="credit-request" id="credit-request" data-js-credit-request>
+ <div class="credit-request__inner container">
+  <img class="credit-request__decor" src="imgs/credit-request/credit-request-decor.webp" width="685" height="685" loading="lazy" decoding="async" alt="">
+  <div class="credit-request__main">
+   <h2 class="title title--medium">Заявка на кредит</h2>
+   <p class="credit-request__desc">Быстрый поиск, сравнение, выбор и предзаказ автомобилей LADA.</p>
+      <form class="credit-request__form" novalidate data-js-credit-request onsubmit="return false">
+      <div class="credit-request__select select" data-js-select>
+       <input type="hidden" name="credit-request-model-input" value="granta" data-js-select-input>
+       <button class="credit-request__select-selected select__selected" id="credit-request-model-button" type="button" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="credit-request-model-list" data-js-select-selected>
+         <span class="credit-request__select-selected-text select__selected-text">LADA Granta</span>
+       </button>
+       <div class="select__content" data-js-select-content>
+        <ul class="select__options" id="credit-request-model-list" role="listbox">
+         <li class="credit-request__select-option select__option" role="option" aria-selected="true" data-select-option-value="credit-request-granta" data-js-select-option>
+          <span class="select__text">LADA Granta</span>
+        </li>
+         <li class="credit-request__select-option select__option" role="option" aria-selected="false" data-select-option-value="credit-request-niva-travel" data-js-select-option>
+          <span class="select__text">LADA Niva Travel</span>
+        </li>
+         <li class="credit-request__select-option select__option" role="option" aria-selected="false" data-select-option-value="credit-request-niva-legend" data-js-select-option>
+          <span class="select__text">LADA Niva Legend</span>
+        </li>
+         <li class="credit-request__select-option select__option" role="option" aria-selected="false" data-select-option-value="credit-request-iskra" data-js-select-option>
+          <span class="select__text">LADA Iskra</span>
+        </li>
+         <li class="credit-request__select-option select__option" role="option" aria-selected="false" data-select-option-value="credit-request-vesta" data-js-select-option>
+          <span class="select__text">LADA Vesta</span>
+        </li>
+         <li class="credit-request__select-option select__option" role="option" aria-selected="false" data-select-option-value="credit-request-largus" data-js-select-option>
+          <span class="select__text">LADA Largus</span>
+        </li>
+        </ul>
+       </div>
+      </div>
+         <div class="credit-request__input input">
+            <input class="credit-request__input-field input__field" id="credit-request-first-name-input" type="text" name="credit_request_first_name" placeholder=" " autocomplete="given-name" aria-required="true" aria-describedby="credit-request-first-name-input-desc" required data-js-credit-request-first-name-input>
+           <label class="credit-request__input-label input__label" for="credit-request-first-name-input">Имя</label>
+           <span class="credit-request__input-desc input__desc" id="credit-request-first-name-input-desc">Обязательное поле</span>
+         </div>
+          <div class="credit-request__input input">
+            <input class="credit-request__input-field input__field" id="credit-request-last-name-input" type="text" name="credit_request_last_name" placeholder=" " autocomplete="family-name" aria-required="true" aria-describedby="credit-request-last-name-input-desc" required data-js-credit-request-last-name-input>
+           <label class="credit-request__input-label input__label" for="credit-request-last-name-input">Фамилия</label>
+           <span class="credit-request__input-desc input__desc" id="credit-request-last-name-input-desc">Обязательное поле</span>
+          </div>
+          <div class="credit-request__input input">
+            <input class="credit-request__input-field input__field" id="credit-request-patronymic-input" type="text" name="credit_request_patronymic" placeholder=" " autocomplete="additional-name" aria-describedby="credit-request-patronymic-input-desc" data-js-credit-request-patronymic-input>
+           <label class="credit-request__input-label input__label" for="credit-request-patronymic-input">Отчество</label>
+           <span class="credit-request__input-desc input__desc" id="credit-request-patronymic-input-desc">Необязательное поле</span>
+          </div>
+          <div class="credit-request__input input">
+            <input class="credit-request__input-field input__field" id="credit-request-phone-input" type="tel" inputmode="tel" name="credit_request_phone" placeholder=" " autocomplete="tel" aria-required="true" aria-describedby="credit-request-phone-input-desc" required data-js-credit-request-phone-input>
+           <label class="credit-request__input-label input__label" for="credit-request-phone-input">Телефон</label>
+           <span class="credit-request__input-desc input__desc" id="credit-request-phone-input-desc">Формат: +7 (999) 999-99-99</span>
+          </div>
+          <div class="credit-request__input input">
+            <input class="credit-request__input-field input__field" id="credit-request-email-input" type="email" inputmode="email" name="credit_request_email" placeholder=" " autocomplete="email" aria-describedby="credit-request-email-input-desc" data-js-credit-request-email-input>
+           <label class="credit-request__input-label input__label" for="credit-request-email-input">Электронная почта</label>
+           <span class="credit-request__input-desc input__desc" id="credit-request-email-input-desc">Например: example@mail.ru</span>
+          </div>
+        <label class="credit-request__agreement">
+         <input class="checkbox" type="checkbox" name="credit_request_agree_terms" aria-required="true" required>
+         <span class="credit-request__agreement-text">Я даю согласие на <a class="credit-request__agreement-link" href="#!">Обработку персональных данных</a></span>
+        </label>
+        <label class="credit-request__agreement">
+         <input class="checkbox" type="checkbox" name="credit_request_newsletter">
+         <span class="credit-request__agreement-text">Соглашаюсь на <a class="credit-request__agreement-link" href="#!">Получение информационно-рекламной рассылки</a></span>
+        </label>
+      <button class="credit-request__button button button--main" type="submit">Отправить заявку</button>
+     </form>
+  </div>
+ </div>
+</section>

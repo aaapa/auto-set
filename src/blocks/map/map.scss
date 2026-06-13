@@ -1,0 +1,35 @@
+.map {
+  width: 100%;
+  padding-block-start: ptrm(90);
+  display: flex;
+  gap: ptrm(60);
+  flex-direction: column;
+  scroll-margin-block-start: var(--section-scroll-top);
+  content-visibility: auto;
+  contain-intrinsic-size: auto ptrm(670);
+  
+  @include mobile {
+    gap: ptrm(30);
+    padding-block-start: ptrm(30);
+  }
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    gap: ptrm(60);
+    flex-direction: column;
+
+    @include mobile {
+      gap: ptrm(30);
+    }
+  }
+
+  &__canvas {
+    width: 100%;
+    height: ptrm(480);
+
+    @include mobile {
+      height: ptrm(300);
+    }
+  }
+}
